@@ -26,21 +26,23 @@ let instMatchingDays = matchingDaysFactory();
 function showDate1() {
     weekdaysField.innerHTML = userMDayTemplate({ weekdayBar: daysArray });
     let weeklybar = document.querySelectorAll('.weekly');
-    // console.log(instMatchingDays.getDayOne(firstDate.value));
-    // console.log(instMatchingDays.dayOneClass(firstDate.value));
-    // console.log(weeklybar[0]);
 
-    if (instMatchingDays.getDayOne(firstDate.value) == 0) {
+    // Set the date using the factory function
+    instMatchingDays.setDayOne(firstDate.value);
+
+    if (instMatchingDays.getDayOne() == 0) {
         weeklybar[0].classList.add("Blue")
 
     } else {
         if (secondDate.value == "") {
-            weeklybar[instMatchingDays.getDayOne(firstDate.value)].classList.add(instMatchingDays.dayOneClass(firstDate.value));
+            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
             
 
         } else {
-                weeklybar[instMatchingDays.getDayOne(firstDate.value)].classList.add(instMatchingDays.dayOneClass(firstDate.value));
-                weeklybar[instMatchingDays.getDayTwo(secondDate.value)].classList.add(instMatchingDays.dayTwoClass(firstDate.value, secondDate.value));   
+            instMatchingDays.setDayTwo(secondDate.value);
+
+            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+            weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());   
            
         }
     }
@@ -53,9 +55,12 @@ function showDate2() {
     let weeklybar = document.querySelectorAll('.weekly');
 
     if (firstDate.value != "") {
-        if (instMatchingDays.getDayTwo(secondDate.value)) {
-            weeklybar[instMatchingDays.getDayOne(firstDate.value)].classList.add(instMatchingDays.dayOneClass(firstDate.value));
-            weeklybar[instMatchingDays.getDayTwo(secondDate.value)].classList.add(instMatchingDays.dayTwoClass(firstDate.value, secondDate.value));
+        instMatchingDays.setDayOne(firstDate.value);
+        instMatchingDays.setDayTwo(secondDate.value);
+
+        if (instMatchingDays.getDayTwo()) {
+            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+            weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());
 
         }
     } else {
