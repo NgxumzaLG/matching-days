@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+/* UNIVERSAL.. */
+
+* {
+    font-family: 'Lato', Helvetica, sans-serif;
+    color: #333447;
+    line-height: 1.5;
+}
+
+body {
+    background-color: rgba(230, 53, 156, 0.507);
+    padding: 0;   
+    margin: 0;
+}
+
+/* UTILITIES... */
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* HEADER... */
+
+.header .mdays-header {
+    margin-bottom: 50px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border: 3px solid white;
+}
+
+/* WEEKDAY BAR */
+
+.weekdays {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 950px;
+    height: 100%;
+}
+
+.weekly {
+    margin: 7.5px;
+    padding-top: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
+    text-align: center;
+    background-color: white;
+    width: auto;
+    height: 125px;
+    min-width: 14%;
+}
+
+.error {
+    color: red;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7.5px;
+}
+
+/* SHOWCASE-DATES */
+
+.showcase-dates .choose-dates{
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.first-date, .second-date {
+    text-align: center;
+    font-size: 20px;
+}
+
+.first-date input, .second-date input {
+    font-size: 20px;
+    width: auto;
+    min-width: 150px;
+    margin: 5px 0px;
+    border-radius: 4px;
+    height: 35px;
+}
+
+/* CLASSLIST */
+
+.Blue {
+    color: white;
+    background-color: rgb(27, 95, 240);
+}
+
+.Green {
+    color: white;
+    background-color: rgb(35, 202, 35);
+}
+
+.Red {
+    color: white;
+    background-color: rgba(240, 25, 25, 0.904);
+}

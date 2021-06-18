@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Days</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script type="text/x-template" class="matchingDaysTemplate">
+        {{#each weekdayBar}}
+        <div class = "weekly"> {{this}} </div>
+        
+        {{/each}}
+        
+      </script>
+</head>
+<body>
+
+    <header class="header">
+            <div class="container mdays-header">
+                <h1>MATCHING DAYS</h1>
+            </div>
+                
+    </header>
+
+    <section class="weekday-bar">
+        <div class="container error">
+        </div>
+        <div class="container weekdays">
+        </div>
+    </section>
+
+    <section class="showcase-dates">
+        <div class="container choose-dates">
+            <div class="first-date">
+                <h3>First Date:</h3>
+                <input type="date" name="match-days" class="first-dates">
+            </div>
+            <div class="second-date">
+                <h3>Second Date:</h3>
+                <input type="date" name="match-days" class="second-dates">
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/matching-days-factory.js" charset="UTF-8"></script>
+
+    <script src="js/matching-days.js" charset="UTF-8"></script>
+    
+</body>
+</html>
