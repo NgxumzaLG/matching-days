@@ -29,20 +29,30 @@ function showDate1() {
 
     // Set the date using the factory function
     instMatchingDays.setDayOne(firstDate.value);
+    instMatchingDays.setDayTwo(secondDate.value);
 
-    if (instMatchingDays.getDayOne() == 0) {
-        weeklybar[0].classList.add("Blue")
 
+    if (instMatchingDays.getDayOne() == 0 && instMatchingDays.getDayTwo() !== 0) {
+        weeklybar[0].classList.add("Blue");
+        weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());
+
+    } else if (instMatchingDays.getDayOne() !== 0 &&  instMatchingDays.getDayTwo() == 0) {
+        weeklybar[0].classList.add("Red");
+        weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+        
     } else {
         if (secondDate.value == "") {
-            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
-            
+            if (instMatchingDays.getDayOne() == 0) {
+                weeklybar[0].classList.add("Blue");
 
+            } else {
+                weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+
+            }        
+        
         } else {
-            instMatchingDays.setDayTwo(secondDate.value);
-
-            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
-            weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());   
+                weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+                weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());
            
         }
     }
@@ -58,11 +68,20 @@ function showDate2() {
         instMatchingDays.setDayOne(firstDate.value);
         instMatchingDays.setDayTwo(secondDate.value);
 
-        if (instMatchingDays.getDayTwo()) {
+        if (instMatchingDays.getDayOne() == 0 && instMatchingDays.getDayTwo() !== 0) {
+            weeklybar[0].classList.add("Blue");
+            weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());
+            
+        } else if (instMatchingDays.getDayOne() !== 0 &&  instMatchingDays.getDayTwo() == 0) {
+            weeklybar[0].classList.add("Red");
+            weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
+    
+        } else {
             weeklybar[instMatchingDays.getDayOne()].classList.add(instMatchingDays.dayOneClass());
             weeklybar[instMatchingDays.getDayTwo()].classList.add(instMatchingDays.dayTwoClass());
 
         }
+        
     } else {
         setTimeout(function () {
             errorDateField.innerHTML = "Please enter the first date, before the second one.";

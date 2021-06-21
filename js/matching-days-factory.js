@@ -39,8 +39,8 @@ function matchingDaysFactory(){
         }
     }
 
-    function dayTwoClass(passDate1, passDate2) {
-        if (getDayOne(passDate1) === getDayTwo(passDate2)) {
+    function dayTwoClass() {
+        if (getDayOne() === getDayTwo()) {
             return "Green";
 
         } else {
